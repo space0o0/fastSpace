@@ -29,7 +29,6 @@ class PhotoChooserFragment : Fragment() {
 
     val GALLERY_REQUESTCODE = 80
     val TAKE_PHOTO_REQUESTCODE = 81
-    val AUTHORITY = "space.learning.baselib.provider"
 
     private var callBack: IPhotoChooserListener? = null
 
@@ -144,7 +143,7 @@ class PhotoChooserFragment : Fragment() {
             if (shouldCrop) {
                 var uri = FileProvider.getUriForFile(
                     activity?.baseContext!!,
-                    AUTHORITY,
+                    getAuthority(),
                     File(mCurrentUri)
                 )
                 ucropImg(uri)
@@ -223,7 +222,7 @@ class PhotoChooserFragment : Fragment() {
                 photoFile?.also {
                     val photoURI: Uri = FileProvider.getUriForFile(
                         mActivity.baseContext,
-                        AUTHORITY,
+                        getAuthority(),
                         it
                     )
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
@@ -231,6 +230,10 @@ class PhotoChooserFragment : Fragment() {
                 }
             }
         }
+    }
+
+    private fun getAuthority():String{
+        return "${mActivity.packageName}.provider"
     }
 
     /**
