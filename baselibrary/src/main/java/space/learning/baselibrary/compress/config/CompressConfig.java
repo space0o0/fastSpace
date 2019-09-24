@@ -10,15 +10,15 @@ public class CompressConfig implements Serializable {
     /**
      * 最小像素不压缩
      */
-    private int unCompressMinPixel = 1000;
+    private int unCompressMinPixel = 100;
     /**
      * 标准像素不压缩
      */
-    private int unCompressNormalPixel = 2000;
+    private int unCompressNormalPixel = 200;
     /**
      * 长或宽不超过的最大像素,单位px
      */
-    private int maxPixel = 1200;
+    private int maxPixel = 1920;
     /**
      * 压缩到的最大大小，单位B
      */

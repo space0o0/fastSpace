@@ -14,23 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".usePhotoChooser.PhotoChooserActivity">
-
+        <activity android:name=".useIntentTask.IntentTaskActivity">
         </activity>
-        <activity android:name=".useCrop.CropActivity" />
-        <activity android:name=".useCompress.ComressImgActivity">
+        <activity android:name=".usePhotoChooser.PhotoChooserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".useCrop.CropActivity" />
+        <activity android:name=".useCompress.ComressImgActivity">
+        </activity>
         <activity android:name=".usePermission.PermissionCheckActivity" />
         <activity android:name=".useNetWorkSubscriber.NetWorkStateActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
 
+        </activity>
         <provider
-            android:name="androidx.core.content.FileProvider"
+            android:name="android.support.v4.content.FileProvider"
             android:authorities="space.learning.baselib.provider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -38,7 +40,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>

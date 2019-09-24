@@ -4,9 +4,16 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application>
+
         <receiver android:name=".network_subscriber.NetWorkReceiver" />
 
         <service android:name=".network_subscriber.jobSchedule.ConnectivityJob"
             android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 </manifest>

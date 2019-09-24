@@ -2,11 +2,11 @@ package space.learning.baselib.usePermission
 
 import android.Manifest
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.support.annotation.RequiresApi
+import android.support.v7.app.AlertDialog
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_permission_check.*
 import space.learning.anno.*
 import space.learning.baselib.R

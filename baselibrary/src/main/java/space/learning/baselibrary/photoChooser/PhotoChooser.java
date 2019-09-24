@@ -1,9 +1,8 @@
 package space.learning.baselibrary.photoChooser;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
+import android.support.v4.app.FragmentActivity;
 
-import com.zeyjr.bmc.std.picture.PhotoChooserFragment;
+import space.learning.baselibrary.photoChooser.ui.PhotoChooserFragment;
 
 import space.learning.baselibrary.photoChooser.listener.IPhotoChooserListener;
 

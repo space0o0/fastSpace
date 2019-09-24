@@ -1,8 +1,8 @@
 package space.learning.baselib.useCrop
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import space.learning.baselib.R
 import space.learning.baselibrary.photoCrop.CropManager
 

@@ -7,9 +7,9 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkRequest;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
-import androidx.annotation.RequiresApi;
 
 import space.learning.baselibrary.constant.Constants;
 

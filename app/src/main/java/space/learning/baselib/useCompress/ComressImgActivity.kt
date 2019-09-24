@@ -2,18 +2,13 @@ package space.learning.baselib.useCompress
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.FragmentActivity
 import android.util.Log
-import androidx.fragment.app.FragmentActivity
-import com.zeyjr.bmc.std.picture.IPictureListenerWrap
 import kotlinx.android.synthetic.main.activity_comress_img.*
-import kotlinx.android.synthetic.main.activity_photo_chooser.*
 import space.learning.baselib.R
-import space.learning.baselib.useCompress.picture.PictureHelper
 import space.learning.baselibrary.compress.CompressImageManager
 import space.learning.baselibrary.compress.bean.Photo
 import space.learning.baselibrary.compress.config.CompressConfig
@@ -49,7 +44,7 @@ class ComressImgActivity : FragmentActivity() {
 
             PhotoChooser.newInstance(this)
                 .addListener(listener)
-                .setCrop(checkBox.isChecked)
+                .setCrop(false)
                 .showTakePhoto()
         }
 
@@ -81,16 +76,26 @@ class ComressImgActivity : FragmentActivity() {
 
         var photo = Photo(uri.path)
 
-        var config = CompressConfig.getDefaultConfig()
+        var config = CompressConfig.builder()
+            .setMaxPixel(240)
+            .setMaxSize(100 * 1024)
+            .create()
 
         var listener = object : CompressImage.CompressListener {
             override fun onCompressSuccess(images: ArrayList<Photo>?) {
 
-                Log.d(TAG, images!![0].compressPath)
+                Log.d(TAG, images!!.size.toString())
+
+                for (i in 0 until images.size) {
+//                    Log.d(TAG, images[i].compressPath)
+                    imageView2.setImageURI(Uri.parse(images[0].compressPath))
+                }
 
             }
 
             override fun onCompressFailed(images: ArrayList<Photo>?, error: String?) {
+
+                Log.d(TAG, error)
 
             }
         }
@@ -98,6 +103,7 @@ class ComressImgActivity : FragmentActivity() {
 
         var compressManager = CompressImageManager.build(this, config, arrayListOf(photo), listener)
 
+        compressManager.compress()
 
     }
 

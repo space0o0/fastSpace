@@ -1,7 +1,7 @@
 package space.learning.baselib.useNetWorkSubscriber
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_net_work_state.*
 import space.learning.baselib.R

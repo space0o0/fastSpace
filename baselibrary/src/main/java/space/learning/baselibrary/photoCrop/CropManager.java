@@ -2,9 +2,9 @@ package space.learning.baselibrary.photoCrop;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import org.jetbrains.annotations.Nullable;
 

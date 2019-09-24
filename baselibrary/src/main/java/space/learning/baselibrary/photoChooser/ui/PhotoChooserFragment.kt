@@ -1,6 +1,5 @@
-package com.zeyjr.bmc.std.picture
+package space.learning.baselibrary.photoChooser.ui
 
-import android.app.Activity
 import android.app.Activity.RESULT_CANCELED
 import android.app.AlertDialog
 import android.content.Intent
@@ -8,14 +7,14 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
+import android.support.v4.content.FileProvider
 import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.FileProvider
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import space.learning.baselibrary.photoChooser.bean.PhotoError
 import space.learning.baselibrary.photoChooser.listener.IPhotoChooserListener
 import space.learning.baselibrary.photoChooser.utils.PhotoUtils
@@ -26,14 +25,15 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class PhotoChooserFragment(activity: FragmentActivity) : Fragment() {
+class PhotoChooserFragment : Fragment() {
 
     val GALLERY_REQUESTCODE = 80
     val TAKE_PHOTO_REQUESTCODE = 81
     val AUTHORITY = "space.learning.baselib.provider"
 
-    private lateinit var callBack: IPhotoChooserListener
-    var mActivity: FragmentActivity = activity
+    private var callBack: IPhotoChooserListener? = null
+
+    private lateinit var mActivity: FragmentActivity
 
     lateinit var mCurrentUri: String
 
@@ -41,20 +41,10 @@ class PhotoChooserFragment(activity: FragmentActivity) : Fragment() {
 
     var manager: CropManager? = null
 
-    init {
-        mActivity.supportFragmentManager
-            .beginTransaction()
-            .add(this, "PhotoChooserFragment")
-            .commitAllowingStateLoss()
-
-        mActivity.supportFragmentManager.executePendingTransactions()
-    }
-
-    fun PictureFragment() {}
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         retainInstance = true
+        mActivity = activity!!
     }
 
     override fun onCreateView(
@@ -67,12 +57,22 @@ class PhotoChooserFragment(activity: FragmentActivity) : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(activity: FragmentActivity) = PhotoChooserFragment(activity)
+        fun newInstance(activity: FragmentActivity): PhotoChooserFragment {
+            var fragment = PhotoChooserFragment()
+
+            activity.supportFragmentManager
+                .beginTransaction()
+                .add(fragment, "PhotoChooserFragment")
+                .commitAllowingStateLoss()
+            activity.supportFragmentManager.executePendingTransactions()
+
+            return fragment
+        }
     }
 
-    fun setListener(listener: IPhotoChooserListener): PhotoChooserFragment {
+    fun setListener(listener: IPhotoChooserListener?): PhotoChooserFragment {
         this.callBack = listener
-        return this;
+        return this
     }
 
     /**
@@ -116,7 +116,7 @@ class PhotoChooserFragment(activity: FragmentActivity) : Fragment() {
         val types = arrayOf("拍照", "相册")
 
         builder.setItems(types) { dialog, which ->
-            // TODO Auto-generated method stub
+
             when (types[which]) {
                 "拍照" -> dispatchTakePictureIntent()
                 "相册" -> dispatchGalleryIntent()
@@ -150,7 +150,7 @@ class PhotoChooserFragment(activity: FragmentActivity) : Fragment() {
                 ucropImg(uri)
 
             } else {
-                callBack.onPhotoChooserExecute(Uri.parse(mCurrentUri))
+                callBack?.onPhotoChooserExecute(Uri.parse(mCurrentUri))
             }
 
         } else if (requestCode == GALLERY_REQUESTCODE) {
@@ -162,7 +162,7 @@ class PhotoChooserFragment(activity: FragmentActivity) : Fragment() {
 
             } else {
                 if (data?.data != null) {
-                    callBack.onPhotoChooserExecute(
+                    callBack?.onPhotoChooserExecute(
                         PhotoUtils.getImagePathFromURI(
                             activity,
                             data.data!!
@@ -181,11 +181,11 @@ class PhotoChooserFragment(activity: FragmentActivity) : Fragment() {
 
         manager = CropManager.getInstance(uri).setCropListener(object : CropListener {
             override fun onCropExecute(path: Uri?) {
-                callBack.onPhotoChooserExecute(path)
+                callBack?.onPhotoChooserExecute(path)
             }
 
             override fun onFail(error: String?) {
-                callBack.onPhotoChooserFial(PhotoError(error))
+                callBack?.onPhotoChooserFial(PhotoError(error))
             }
         }).start(this)
 

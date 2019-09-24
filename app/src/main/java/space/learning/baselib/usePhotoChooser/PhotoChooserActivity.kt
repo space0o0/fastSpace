@@ -1,8 +1,8 @@
 package space.learning.baselib.usePhotoChooser
 
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_photo_chooser.*
 import space.learning.baselib.R
