@@ -44,7 +44,7 @@ class ComressImgActivity : FragmentActivity() {
 
             PhotoChooser.newInstance(this)
                 .addListener(listener)
-                .setCrop(false)
+                .setCrop(true)
                 .showTakePhoto()
         }
 
@@ -77,8 +77,8 @@ class ComressImgActivity : FragmentActivity() {
         var photo = Photo(uri.path)
 
         var config = CompressConfig.builder()
-            .setMaxPixel(240)
-            .setMaxSize(100 * 1024)
+            .setMaxPixel(1000)
+            .setMaxSize(300 * 1024)
             .create()
 
         var listener = object : CompressImage.CompressListener {

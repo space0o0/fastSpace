@@ -109,7 +109,7 @@ class PhotoChooserFragment : Fragment() {
 
         val builder = AlertDialog.Builder(activity)
 
-        val title = "<font color='#EE9A00'>选择头像</font>"
+        val title = "<font color='#EE9A00'>选择照片来源</font>"
         builder.setTitle(Html.fromHtml(title))
 
         val types = arrayOf("拍照", "相册")

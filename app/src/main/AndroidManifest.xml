@@ -17,14 +17,15 @@
         <activity android:name=".useIntentTask.IntentTaskActivity">
         </activity>
         <activity android:name=".usePhotoChooser.PhotoChooserActivity">
+
+        </activity>
+        <activity android:name=".useCrop.CropActivity" />
+        <activity android:name=".useCompress.ComressImgActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".useCrop.CropActivity" />
-        <activity android:name=".useCompress.ComressImgActivity">
         </activity>
         <activity android:name=".usePermission.PermissionCheckActivity" />
         <activity android:name=".useNetWorkSubscriber.NetWorkStateActivity" />

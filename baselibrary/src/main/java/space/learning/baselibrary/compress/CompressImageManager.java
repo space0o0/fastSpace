@@ -28,14 +28,14 @@ public class CompressImageManager implements CompressImage {
     /**
      * 私有实现
      *
-     * @param context 上下文
-     * @param config 配置
-     * @param images 图片集合
+     * @param context  上下文
+     * @param config   配置
+     * @param images   图片集合
      * @param listener 监听
      * @return
      */
     private CompressImageManager(Context context, CompressConfig config,
-                                ArrayList<Photo> images, CompressImage.CompressListener listener) {
+                                 ArrayList<Photo> images, CompressImage.CompressListener listener) {
         compressImageUtil = new CompressImageUtil(context, config);
         this.config = config;
         this.images = images;
@@ -45,9 +45,9 @@ public class CompressImageManager implements CompressImage {
     /**
      * 静态方法，new实现
      *
-     * @param context 上下文
-     * @param config 配置
-     * @param images 图片集合
+     * @param context  上下文
+     * @param config   配置
+     * @param images   图片集合
      * @param listener 监听
      * @return
      */
@@ -90,8 +90,9 @@ public class CompressImageManager implements CompressImage {
             return;
         }
 
-        // < 200KB
+        // 小于指定size，不压缩，把原始路径当作压缩路径返回
         if (file.length() < config.getMaxSize()) {
+            image.setCompressPath(image.getOriginalPath());
             continueCompress(image, true);
             return;
         }
