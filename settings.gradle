@@ -1,2 +1,2 @@
-include ':app', ':baselibrary', ':compiler', ':annotation'
+include ':app', ':baselibrary', ':compiler', ':annotation', ':myui'
 rootProject.name='BaseLib'
