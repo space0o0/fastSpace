@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
  * 屏幕适配：按效果图自动缩放内部控件
  */
 public class ScreenAdapterLayout extends RelativeLayout {
-
     /**
      * 标记是否缩放子view，防止多次缩放。
      */
@@ -56,8 +55,6 @@ public class ScreenAdapterLayout extends RelativeLayout {
             }
             hasScale = true;
         }
-
-
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 }

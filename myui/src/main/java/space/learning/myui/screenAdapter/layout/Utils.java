@@ -45,15 +45,8 @@ public class Utils {
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 wm.getDefaultDisplay().getMetrics(displayMetrics);
 
-                if (displayMetrics.widthPixels > displayMetrics.heightPixels) {
-                    //横屏显示
-                    screenHeight = displayMetrics.heightPixels;
-                    screenWidth = displayMetrics.widthPixels;
-                } else {
-                    //竖屏显示
-                    screenWidth = displayMetrics.widthPixels;
-                    screenHeight = displayMetrics.heightPixels;
-                }
+                screenHeight = displayMetrics.heightPixels;
+                screenWidth = displayMetrics.widthPixels;
             }
         }
     }
@@ -99,6 +92,4 @@ public class Utils {
     public float getStatusBarHeight() {
         return statusBarHeight;
     }
-
-
 }

@@ -10,4 +10,5 @@ class ScreenAdapterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_screen_adapter)
     }
+
 }

@@ -6,11 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".screenAdapter.ScreenAdapterActivity">
 
-
     <TextView
         android:layout_width="360px"
         android:layout_height="360px"
         android:background="@color/colorPrimary" />
-
-
 </space.learning.myui.screenAdapter.layout.ScreenAdapterLayout>
