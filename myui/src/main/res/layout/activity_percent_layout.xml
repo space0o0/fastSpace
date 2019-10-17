@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<space.learning.myui.percentLayout.PercentLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".percentLayout.PercentLayoutActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="宽0.5 高0.5"
+        android:gravity="center"
+        android:textColor="#fff"
+        app:heightPercent="0.5"
+        app:widthPercent="0.5" />
+
+</space.learning.myui.percentLayout.PercentLayout>
