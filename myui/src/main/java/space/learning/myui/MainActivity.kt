@@ -1,7 +1,6 @@
 package space.learning.myui
 
 import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import space.learning.myui.split.SplitView
 

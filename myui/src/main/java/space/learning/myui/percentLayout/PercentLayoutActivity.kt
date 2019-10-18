@@ -1,7 +1,7 @@
 package space.learning.myui.percentLayout
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import space.learning.myui.R
 
 class PercentLayoutActivity : AppCompatActivity() {

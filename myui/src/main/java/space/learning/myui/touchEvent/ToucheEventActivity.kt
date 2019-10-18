@@ -1,9 +1,7 @@
 package space.learning.myui.touchEvent
 
 import android.app.Activity
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.util.Log
 import android.view.MotionEvent
 import space.learning.myui.R
