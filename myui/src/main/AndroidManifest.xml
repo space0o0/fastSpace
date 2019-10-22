@@ -10,16 +10,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".anim.AnimatorTestActivity">
+        <activity android:name=".hw1.Q2.Question2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".touchEvent.ToucheEventActivity"></activity>
-        <activity android:name=".percentLayout.PercentLayoutActivity"></activity>
-        <activity android:name=".screenAdapter.ScreenAdapterActivity"></activity>
+        <activity android:name=".hw1.Q1.Question1Activity">
+        </activity>
+        <activity android:name=".screenAdapter2.ScreenAdapter2Activity" />
+        <activity android:name=".anim.AnimatorTestActivity"></activity>
+        <activity android:name=".touchEvent.ToucheEventActivity" />
+        <activity android:name=".percentLayout.PercentLayoutActivity" />
+        <activity android:name=".screenAdapter.ScreenAdapterActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

@@ -1,7 +1,11 @@
 package space.learning.myui.anim
 
+import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_anim_test.*
 import space.learning.myui.R
 import space.learning.myui.anim.lib.MyObjectAnimator
@@ -18,5 +22,7 @@ class AnimTestActivity : AppCompatActivity() {
         anim.setInterpolator(LinearInterpolator())
         anim.start()
 
+        var bitmap = null
+        var canvas = Canvas();
     }
 }

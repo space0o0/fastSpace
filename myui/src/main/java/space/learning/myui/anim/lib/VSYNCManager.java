@@ -13,34 +13,38 @@ class VSYNCManager {
 
     private Thread mThread;
 
+    //模拟每16ms发送vsync信号
+    private Runnable syncRunner = new Runnable() {
+        @Override
+        public void run() {
+            while (true) {
+
+                try {
+//                Log.d(getClass().getSimpleName(), "run: ");
+                    Thread.sleep(16);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                //发送刷新信号
+                for (VSYNCCallBack callBack : callBacks) {
+                    callBack.onVsync(System.currentTimeMillis());
+                }
+            }
+        }
+
+    };
+
     static VSYNCManager getInstance() {
         return instance;
     }
 
     private VSYNCManager() {
-        if (mThread == null) {
-            mThread = new Thread(syncRunner);
-            mThread.start();
-        }
+//        if (mThread == null) {
+        mThread = new Thread(syncRunner);
+        mThread.start();
+//        }
     }
-
-    //模拟每16ms发送vsync信号
-    private Runnable syncRunner = new Runnable() {
-        @Override
-        public void run() {
-            try {
-                Log.d(getClass().getSimpleName(), "run: ");
-                Thread.sleep(16);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
-            //发送刷新信号
-            for (VSYNCCallBack callBack : callBacks) {
-                callBack.onVsync(System.currentTimeMillis());
-            }
-        }
-    };
 
     /**
      * 暴露一个信号接口，让动画模拟VSYNC刷新信号。
@@ -56,7 +60,7 @@ class VSYNCManager {
      */
     void addCallBack(VSYNCCallBack callBack) {
 
-        if (callBacks.contains(callBack)){
+        if (callBacks.contains(callBack)) {
             Log.d(getClass().getSimpleName(), "has callback return ! ");
             return;
         }

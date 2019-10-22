@@ -56,7 +56,7 @@ public class MyObjectAnimator implements VSYNCManager.VSYNCCallBack {
     @Override
     public boolean onVsync(long currentTime) {
 
-        Log.d(getClass().getSimpleName(), "onVsync: ");
+//        Log.d(getClass().getSimpleName(), "onVsync: ");
         //当前执行动画进度百分比
         float animPercent = (currentAnimIndex++) / animMaxCount;
 
@@ -76,6 +76,6 @@ public class MyObjectAnimator implements VSYNCManager.VSYNCCallBack {
 
     public void start() {
         Log.d(getClass().getSimpleName(), "start: ");
-        VSYNCManager.getInstance().addCallBack(this);
+//        VSYNCManager.getInstance().addCallBack(this);
     }
 }
