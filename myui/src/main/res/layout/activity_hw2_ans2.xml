@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<space.learning.myui.hw2.Q2.CustomLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".hw2.Q2.HW2Ans2Activity">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="540px"
+        android:layout_height="540px"
+        android:textSize="16sp"
+        android:background="#f00"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="540px"
+        android:layout_height="540px"
+        android:textSize="16sp"
+        android:background="#0f0"
+        android:gravity="center" />
+</space.learning.myui.hw2.Q2.CustomLinearLayout>

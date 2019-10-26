@@ -10,17 +10,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".hw1.Q2.Question2Activity">
+        <activity android:name=".exam1.Q1.PWDActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".hw1.Q1.Question1Activity">
+        <activity android:name=".hw2.Q2.HW2Ans2Activity">
         </activity>
+        <activity android:name=".hw2.Q1.HW2Ans1Activity"></activity>
+        <activity android:name=".hw2.Q1.HW2Q1Activity" />
+        <activity android:name=".hw1.Q2.Question2Activity" />
+        <activity android:name=".hw1.Q1.Question1Activity" />
         <activity android:name=".screenAdapter2.ScreenAdapter2Activity" />
-        <activity android:name=".anim.AnimatorTestActivity"></activity>
+        <activity android:name=".anim.AnimatorTestActivity" />
         <activity android:name=".touchEvent.ToucheEventActivity" />
         <activity android:name=".percentLayout.PercentLayoutActivity" />
         <activity android:name=".screenAdapter.ScreenAdapterActivity" />

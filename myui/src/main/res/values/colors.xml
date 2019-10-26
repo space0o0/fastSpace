@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <!-- 暗灰色 -->
+    <color name="dimgrey">#696969</color>
+    <color name="steelblue">#4682B4</color>
+    <!-- 钢兰色 -->
 </resources>
